@@ -1,0 +1,37 @@
+{
+  "name": "taskify-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "services/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "bun run scripts/dev.ts",
+    "test": "bun test tests/contract tests/integration",
+    "test:e2e": "bun test tests/e2e",
+    "db:migrate": "bun run services/projects-service/src/db/migrate.ts && bun run services/tasks-service/src/db/migrate.ts && bun run services/notifications-service/src/db/migrate.ts",
+    "db:seed": "bun run services/projects-service/src/db/seed.ts && bun run services/tasks-service/src/db/seed.ts",
+    "lint": "bunx biome check packages services apps tests",
+    "typecheck": "tsc -p packages/shared/tsconfig.json --noEmit && tsc -p services/api-gateway/tsconfig.json --noEmit && tsc -p services/projects-service/tsconfig.json --noEmit && tsc -p services/tasks-service/tsconfig.json --noEmit && tsc -p services/notifications-service/tsconfig.json --noEmit && tsc -p apps/web/tsconfig.json --noEmit"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.57.0",
+    "@taskify/shared": "workspace:*",
+    "@types/bun": "1.4.3",
+    "@types/react": "19.2.0",
+    "@types/react-dom": "19.2.2",
+    "drizzle-orm": "0.45.2",
+    "elysia": "1.4.28",
+    "playwright": "1.57.0",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "typescript": "5.9.3",
+    "zod": "3.25.76"
+  },
+  "overrides": {
+    "exact-mirror": "0.2.7",
+    "@sinclair/typebox": "0.34.49"
+  }
+}

@@ -1,0 +1,12 @@
+node_modules/
+.git/
+Dockerfile*
+.dockerignore
+*.log*
+.env
+.env.*
+!.env.example
+.data/
+coverage/
+test-results/
+playwright-report/

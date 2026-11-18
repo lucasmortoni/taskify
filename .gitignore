@@ -1,0 +1,45 @@
+# Dependencies & Bun/Node caches
+node_modules/
+.bun/
+
+# Build & React SSR outputs
+dist/
+build/
+.vinxi/
+.output/
+.tanstack/
+*.tsbuildinfo
+
+# Environment & secrets
+.env
+.env.*
+!.env.example
+
+# Local databases & Docker data
+.data/
+*.sqlite
+*.sqlite-*
+postgres-data/
+
+# Testing, coverage & Playwright artifacts
+coverage/
+test-results/
+playwright-report/
+blob-report/
+playwright/.cache/
+
+# Logs & temporary files
+*.log
+*.log.*
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.tmp
+*.swp
+*.deb
+
+# OS & IDE files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
