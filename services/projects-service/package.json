@@ -1,0 +1,18 @@
+{
+  "name": "@taskify/projects-service",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "bun --watch src/index.ts",
+    "start": "bun src/index.ts",
+    "db:migrate": "bun src/db/migrate.ts",
+    "db:seed": "bun src/db/seed.ts"
+  },
+  "dependencies": {
+    "@taskify/shared": "workspace:*",
+    "drizzle-orm": "0.45.2",
+    "elysia": "1.4.28",
+    "zod": "3.25.76"
+  }
+}
