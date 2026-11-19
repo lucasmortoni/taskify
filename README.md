@@ -6,6 +6,35 @@ An end-to-end **Spec-Driven Development (SDD)** example project following the of
 
 ---
 
+## Screenshots
+
+### Kanban Board Workspace
+Zero-login workspace with 5 predefined team members, 3 sample projects, and a 4-column drag-and-drop Kanban board (`To Do`, `In Progress`, `In Review`, `Done`).
+
+![Taskify Kanban Board Workspace](docs/screenshots/kanban-board.png)
+
+### Create Task & Single-Assignee Selection
+Task creation modal with dual-layer Zod validation, initial column selection, and `0..1` team assignee picker.
+
+![Create Task Modal](docs/screenshots/create-task-modal.png)
+
+### Task Details & Author-Owned Comments
+Chronological task discussion thread where `Edit` and `Delete` controls are restricted exclusively to each comment's original author.
+
+![Task Details and Author-Owned Comments](docs/screenshots/task-detail-comments.png)
+
+### Real-Time Team Activity Notifications (SSE)
+Live Server-Sent Events activity feed broadcasting project, task, and comment updates across sessions with read toggles.
+
+![Real-Time Notifications Dropdown](docs/screenshots/realtime-notifications.png)
+
+### OpenAPI 3.1 API Gateway Docs
+Auto-generated OpenAPI 3.1 endpoint catalog served at `/swagger` and `/swagger/json`.
+
+![OpenAPI 3.1 Gateway Docs](docs/screenshots/openapi-docs.png)
+
+---
+
 ## How Spec Kit Was Used (Step-by-Step Guide)
 
 This repository preserves every Spec Kit artifact generated along the way inside [`.specify/`](.specify/) and [`specs/001-taskify-kanban-mvp/`](specs/001-taskify-kanban-mvp/) so you can trace how each command builds on the previous one:
@@ -61,6 +90,7 @@ Implemented all 44 tasks, validated against Docker PostgreSQL 16 and headless Ch
 ```text
 ├── .specify/                       # Spec Kit configuration, constitution, templates, and scripts
 ├── specs/001-taskify-kanban-mvp/   # Spec, plan, research, data-model, REST contracts, checklists, tasks
+├── docs/screenshots/               # Application screenshots embedded in README
 ├── packages/
 │   └── shared/                     # Shared Zod DTO schemas, predefined 5-user roster, security helpers
 ├── services/
